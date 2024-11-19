@@ -27,7 +27,7 @@ def _store_user():
     hook = PostgresHook(postgres_conn_id='postgres')
     hook.copy_expert(
         sql="COPY users FROM stdin WITH DELIMITER as ','",
-        filename='/temp/processed_user.csv'
+        filename='/tmp/processed_user.csv'
     )
 
 with DAG(
